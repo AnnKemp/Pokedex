@@ -16,6 +16,10 @@ fetch('https://pokeapi.co/api/v2/pokemon/'+input.value.toLowerCase() +'')
         let id=data.id;
         document.getElementById("pokeId").innerHTML="Poke ID: "+id;
 
+            let pokeName = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+            console.log(pokeName);
+            document.getElementById('pokeName').innerHTML = pokeName;
+
 
     });
 });
