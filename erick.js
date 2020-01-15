@@ -20,12 +20,10 @@ button.addEventListener('click', function () {
         document.getElementById('weightPoke').innerHTML= ('Weight: ' + pokeWeight);
 
         // abilities
-        let abilitiesNewArray = [];
             for (let i = 0; i < data.abilities.length; i++) {
-                abilitiesNewArray.push(data.abilities[i].ability.name);
-                console.log(abilitiesNewArray);
+                let abilitiesPokeVar = data.abilities[i].ability.name;
+                document.getElementById('abilitiesPoke').innerHTML = abilitiesPokeVar;
             }
-
 
         // poke moves
         let pokeMovesNewArray= []; // empty array for poke moves
