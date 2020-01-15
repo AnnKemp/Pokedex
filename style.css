@@ -22,8 +22,8 @@ body{
 #prevEvolution{
     position:absolute;
     left:50%;
-    margin-left:120px;
-    top:230px;
+    margin-left:100px;
+    top:250px;
 }
 button {
     background: transparent;
@@ -57,4 +57,37 @@ button {
     margin-left:159px;
     top:222px;
     /* font-size: 16px;*/
+}
+@media screen and (max-width: 600px) {
+body{
+    background-color:#D2381E;
+    padding-left:2%;
+    background-image: none;
+}
+    #pokeImg{
+        border:red solid 1px;
+       margin-left:auto;
+       margin-right:auto;
+        width:200px;
+        height:200px;
+
+
+    }
+    #pokeMoves{
+        position:absolute;
+        top:354px;
+        /* font-size: 16px;*/
+    }
+    #pokeId{
+        position:absolute;
+        left:50%;
+        margin-left:-10px;
+        top:504px;
+        font-size: 18px;
+    }
+    #pokeName{
+        position:absolute;
+        top:222px;
+        /* font-size: 16px;*/
+    }
 }
