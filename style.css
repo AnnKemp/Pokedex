@@ -12,18 +12,12 @@ body{
     font-size: 14px;
     font-weight: bold;
 }
+
 #ask{
     width:360px;
-    border:red solid 1px;
     margin-right:auto;
     margin-left:auto;
     margin-top: 2%;
-}
-#prevEvolution{
-    position:absolute;
-    left:50%;
-    margin-left:70px;
-    top:265px;
 }
 button {
   background-color:white;
@@ -32,78 +26,39 @@ button {
    border: 1px solid #ccc;
     margin-left: 4px;
     border-radius: 25px;
+    margin-top: 2px;
+}
+button i{
     font-size: 26px;
     font-weight: bold;
     color: gray;
-   /* border: none !important; */
-    /* font-size:0; */
-}
-i{
-
-}
-i.hover{
-    background-color: #eee;
-    border:none;
-}
-input{
-    width: 300px;
-    height: 50px;
-    border-radius: 5px;
-    padding:10px;
-    font-size: 18px;
-
-}
+ }
+button i.hover{
+     background-color: #eee;
+     border:none !important;
+ }
+ input{
+     width: 300px;
+     height: 50px;
+     border-radius: 5px;
+     padding:10px;
+     font-size: 18px;
+ }
 #pokeImg{
-    position:absolute;
-    left:50%;
-    margin-left:-250px;
-    width:150px;
-    height:150px;
     top:245px;
 }
-#evoImg{
-    position:absolute;
-    left:50%;
-    margin-left:-170px;
-    top:250px;
-
-}
-
-#pokeMove1{
-    position:absolute;
-    left:50%;
-    margin-left:78px;
-    top:368px;
-    color:white;
-   /* font-size: 16px;*/
-}
-#pokeMove2{
-position:absolute;
-left:50%;
-margin-left:207px;
-top:368px;
-color:white;
-/* font-size: 16px;*/
-}
-#pokeMove3{
-    position:absolute;
-    left:50%;
-    margin-left:78px;
-    top:408px;
-    color:white;
-    /* font-size: 16px;*/
-}
-#pokeMove4{
-    position:absolute;
-    left:50%;
-    margin-left:207px;
-    top:408px;
-    color:white;
-    /* font-size: 16px;*/
-}
-
-
-#pokeId{
+ #pokeImg, #evoImg{
+     position:absolute;
+     left:50%;
+     margin-left:-250px;
+     width:150px;
+     height:150px;
+ }
+ #evoImg{
+     margin-left:-330px;
+     top:257px;
+ }
+#pokeId, #pokeName{
     position:absolute;
     left:50%;
     margin-left:-209px;
@@ -111,13 +66,43 @@ color:white;
     font-size: 18px;
 }
 #pokeName{
-    position:absolute;
-    left:50%;
     margin-left:159px;
     top:247px;
     /* font-size: 16px;*/
 }
+#prevEvolution, #weightPoke{
+    position:absolute;
+    left:50%;
+    margin-left:70px;
+    top:265px;
+}
+#weightPoke{
+    top:285px;
+}
+ #pokeMove1, #pokeMove2, #pokeMove3, #pokeMove4{
+     position:absolute;
+     left:50%;
+     margin-left:78px;
+     top:368px;
+     color:white;
+    /* font-size: 16px;*/
+}
+#pokeMove2{
+    margin-left:207px;
+    top:368px;
+/* font-size: 16px;*/
+}
+#pokeMove3{
+    margin-left:78px;
+    top:408px;
+}
+#pokeMove4{
+    margin-left:207px;
+    top:408px;
+}
+/*----------------------------------------------------------------------for phone -----------------------------------------------------------------------*/
 @media screen and (max-width: 600px) {
+
 body{
     background-color:#D2381E;
     padding-left:2%;
@@ -131,8 +116,7 @@ body{
         height:200px;
     }
     #pokeMoves{
-        position:absolute;
-        top:354px;
+       margin-top: 10px;
         /* font-size: 16px;*/
     }
     #pokeId{
@@ -143,8 +127,7 @@ body{
         font-size: 18px;
     }
     #pokeName{
-        position:absolute;
-        top:222px;
+        margin-top:20px;
         /* font-size: 16px;*/
     }
 }
