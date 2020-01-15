@@ -36,6 +36,13 @@ button {
     margin-left:-170px;
     top:250px;
 }
+#evoImg{
+    position:absolute;
+    left:50%;
+    margin-left:-170px;
+    top:250px;
+
+}
 #pokeMoves{
     position:absolute;
     left:50%;
@@ -70,8 +77,6 @@ body{
        margin-right:auto;
         width:200px;
         height:200px;
-
-
     }
     #pokeMoves{
         position:absolute;
