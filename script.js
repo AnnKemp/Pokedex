@@ -1,7 +1,6 @@
 let button = document.getElementById('run');
 let input = document.getElementById("pokemon");
 let pokemonImage = document.getElementById('pokeImg');
-let previousEvolution = document.getElementById('prevEvolution');
 
 
 button.addEventListener('click', function () {
@@ -26,6 +25,7 @@ button.addEventListener('click', function () {
                 .then(data => {
 
                     let previousEvo = data.evolves_from_species.name;
+                    previousEvolution.innerHTML = data.evolves_from_species.name;
                     console.log(data.evolution_chain.url);
                     let evolutionUrl = data.evolution_chain.url;
 
