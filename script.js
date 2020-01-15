@@ -20,6 +20,22 @@ button.addEventListener('click', function () {
             document.getElementById('pokeName').innerHTML = pokeName;
             let pokemonId = document.getElementById("pokeId").innerText;
 
+            // poke moves
+            let pokeMovesNewArray= []; // empty array for poke moves
+
+            for (let i = 0; i < data.moves.length; i++) {
+                pokeMovesNewArray.push(data.moves[i].move.name);
+            }
+
+            let randomMove;
+            let randomFourMoves;
+
+            for (let i = 0; i < 4; i++) {
+                randomMove= Math.floor(Math.random()*pokeMovesNewArray.length);
+                randomFourMoves = pokeMovesNewArray[randomMove];
+                console.log(randomFourMoves);
+                document.getElementById('pokeMove'+(i+1)+'').innerHTML = randomFourMoves;
+            }
 
 
 
