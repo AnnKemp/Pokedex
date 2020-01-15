@@ -21,21 +21,21 @@ button {
     position:absolute;
     left:50%;
     margin-left:79px;
-    margin-top:330px;
+    top:352px;
     color:white;
    /* font-size: 16px;*/
 }
 #pokeId{
     position:absolute;
     left:50%;
-    margin-left:-220px;
-    margin-top:485px;
+    margin-left:-210px;
+    top:503px;
     /* font-size: 16px;*/
 }
 #pokeName{
     position:absolute;
     left:50%;
     margin-left:150px;
-    margin-top:205px;
+    top:222px;
     /* font-size: 16px;*/
 }
