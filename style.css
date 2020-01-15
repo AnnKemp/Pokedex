@@ -13,8 +13,8 @@ body{
     font-weight: bold;
 }
 #ask{
-    width:25%;
-
+    width:360px;
+    border:red solid 1px;
     margin-right:auto;
     margin-left:auto;
     margin-top: 2%;
@@ -26,9 +26,24 @@ body{
     top:265px;
 }
 button {
-    background: transparent;
+  background-color:white;
+    width: 50px;
+    height: 50px;
+   border: 1px solid #ccc;
+    margin-left: 4px;
+    border-radius: 25px;
+    font-size: 26px;
+    font-weight: bold;
+    color: gray;
    /* border: none !important; */
     /* font-size:0; */
+}
+i{
+
+}
+i.hover{
+    background-color: #eee;
+    border:none;
 }
 input{
     width: 300px;

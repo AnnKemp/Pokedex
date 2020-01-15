@@ -1,14 +1,15 @@
 let button = document.getElementById('run');
 let input = document.getElementById("pokemon");
 let pokemonImage = document.getElementById('pokeImg');
-
+let evoImage = document.getElementById('evoImg');
 
 button.addEventListener('click', function () {
 
-
+getEvolution();
     fetch('https://pokeapi.co/api/v2/pokemon/' + input.value.toLowerCase() + '')
         .then(link => link.json())
         .then(data => {
+            //console.log(data);
            // console.log(data.sprites.front_default);
             let pokeImageSource = (data.sprites.front_default);
             pokemonImage.setAttribute('src', pokeImageSource);
@@ -33,51 +34,47 @@ button.addEventListener('click', function () {
             for (let i = 0; i < 4; i++) {
                 randomMove= Math.floor(Math.random()*pokeMovesNewArray.length);
                 randomFourMoves = pokeMovesNewArray[randomMove];
-                console.log(randomFourMoves);
+               // console.log(randomFourMoves);
                 document.getElementById('pokeMove'+(i+1)+'').innerHTML = randomFourMoves;
             }
 
 
-
-
-            //fetch prev evo
-            fetch('https://pokeapi.co/api/v2/pokemon-species/' + pokemonId + '')
-                .then(link => link.json())
-                .then(data => {
-
-                    let previousEvo = data.evolves_from_species.name;
-
-                    document.getElementById('prevEvolution').innerHTML = "previous evolution: "+data.evolves_from_species.name;
-                    console.log(data.evolution_chain.url);
-                    let evolutionUrl = data.evolution_chain.url;
-
-
-
-
-
-
-                    //fetch next evo
-                    fetch(evolutionUrl)
-                        .then(link => link.json())
-                        .then(data => {
-
-
-                            //console.log(data);
-                            //console.log(data.chain);
-                            // final evolution
-                            console.log(data.chain.evolves_to[0].evolves_to[0].species)
-
-
-
-                        });
-
-
                 })
-                .catch(error => document.getElementById('prevEvolution').innerHTML = "");
+
 
 
         });
 
 
 
-});
+async function getEvolution() {
+    let response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${input.value}`);
+    let evolutionData = await response.json();
+    const previousPokemonName = evolutionData.evolves_from_species.name;
+    document.getElementById('prevEvolution').innerHTML = "previous evolution: "+previousPokemonName;
+
+    getPreviousEvolution(previousPokemonName);
+}
+
+async function getPreviousEvolution(namepokemon) {
+    let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${namepokemon}`);
+    let pokemonEvolutionDataPrevious = await response.json();
+    console.log(pokemonEvolutionDataPrevious.sprites);
+    let pokemonSprite = pokemonEvolutionDataPrevious.sprites.front_default;
+    evoImage.setAttribute("src", pokemonSprite);
+}
+
+// //fetch next evo
+// fetch(evolutionUrl)
+//     .then(link => link.json())
+//     .then(data => {
+//
+//
+//         //console.log(data);
+//         //console.log(data.chain);
+//         // final evolution
+//         console.log(data.chain.evolves_to[0].evolves_to[0].species)
+//
+//
+//
+//     });
