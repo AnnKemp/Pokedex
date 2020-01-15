@@ -20,15 +20,27 @@ button.addEventListener('click', function () {
             document.getElementById('pokeName').innerHTML = pokeName;
             let pokemonId = document.getElementById("pokeId").innerText;
 
+
+
+
+
+            //fetch prev evo
             fetch('https://pokeapi.co/api/v2/pokemon-species/' + pokemonId + '')
                 .then(link => link.json())
                 .then(data => {
 
                     let previousEvo = data.evolves_from_species.name;
-                    previousEvolution.innerHTML = data.evolves_from_species.name;
+
+                    document.getElementById('prevEvolution').innerHTML = "previous evolution: "+data.evolves_from_species.name;
                     console.log(data.evolution_chain.url);
                     let evolutionUrl = data.evolution_chain.url;
 
+
+
+
+
+
+                    //fetch next evo
                     fetch(evolutionUrl)
                         .then(link => link.json())
                         .then(data => {
@@ -40,13 +52,16 @@ button.addEventListener('click', function () {
                             console.log(data.chain.evolves_to[0].evolves_to[0].species)
 
 
+
                         });
 
 
-                });
+                })
+                .catch(error => document.getElementById('prevEvolution').innerHTML = "");
 
 
         });
+
 
 
 });
