@@ -15,6 +15,11 @@ button.addEventListener('click', function () {
         console.log(pokeName);
         document.getElementById('pokeName').innerHTML = pokeName;
 
+        // weight
+        let pokeWeight = data.weight;
+        document.getElementById('weightPoke').innerHTML= (pokeWeight);
+
+
         // poke moves
         let pokeMovesNewArray= []; // empty array for poke moves
 
@@ -32,7 +37,7 @@ button.addEventListener('click', function () {
                 document.getElementById('pokeMove'+(i+1)+'').innerHTML = randomFourMoves;
         }
 
-            
+
         });
 
 });
