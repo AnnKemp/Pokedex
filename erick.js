@@ -22,6 +22,7 @@ button.addEventListener('click', function () {
            pokeMovesNewArray.push(data.moves[i].move.name);
             }
 
+        function
         for (let i = 0; i < 4; i++) {
             let randomMove= Math.floor(Math.random()*pokeMovesNewArray.length);
             let randomFourMoves = pokeMovesNewArray[randomMove];
