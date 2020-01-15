@@ -8,6 +8,8 @@ body{
     background-repeat: no-repeat;
     background-position-x:center;
     background-position-Y:85px;
+
+    font-size: 16px;
 }
 button {
     background: transparent;
@@ -15,3 +17,25 @@ button {
     /* font-size:0; */
 }
 
+#pokeMoves{
+    position:absolute;
+    left:50%;
+    margin-left:79px;
+    top:352px;
+    color:white;
+   /* font-size: 16px;*/
+}
+#pokeId{
+    position:absolute;
+    left:50%;
+    margin-left:-210px;
+    top:503px;
+    /* font-size: 16px;*/
+}
+#pokeName{
+    position:absolute;
+    left:50%;
+    margin-left:150px;
+    top:222px;
+    /* font-size: 16px;*/
+}
