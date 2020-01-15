@@ -1,4 +1,13 @@
+*{
+
+}
 body{
     background-image: url("images/deck.jpeg");
     background-repeat: no-repeat;
+    background-position-x:center;
+}
+button {
+    background: transparent;
+   /* border: none !important; */
+    font-size:0;
 }
