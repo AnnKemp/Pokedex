@@ -22,14 +22,17 @@ button.addEventListener('click', function () {
            pokeMovesNewArray.push(data.moves[i].move.name);
             }
 
-        function
-        for (let i = 0; i < 4; i++) {
-            let randomMove= Math.floor(Math.random()*pokeMovesNewArray.length);
-            let randomFourMoves = pokeMovesNewArray[randomMove];
-            document.getElementById('pokeMoves').innerHTML = randomFourMoves;
-            }
+        let randomMove;
+        let randomFourMoves;
 
+            for (let i = 0; i < 4; i++) {
+                randomMove= Math.floor(Math.random()*pokeMovesNewArray.length);
+                randomFourMoves = pokeMovesNewArray[randomMove];
+                console.log(randomFourMoves);
+                document.getElementById('pokeMove'+(i+1)+'').innerHTML = randomFourMoves;
+        }
 
+            
         });
 
 });
