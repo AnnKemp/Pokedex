@@ -17,7 +17,14 @@ button.addEventListener('click', function () {
 
         // weight
         let pokeWeight = data.weight;
-        document.getElementById('weightPoke').innerHTML= (pokeWeight);
+        document.getElementById('weightPoke').innerHTML= ('Weight: ' + pokeWeight);
+
+        // abilities
+        let abilitiesNewArray = [];
+            for (let i = 0; i < data.abilities.length; i++) {
+                abilitiesNewArray.push(data.abilities[i].ability.name);
+                console.log(abilitiesNewArray);
+            }
 
 
         // poke moves
