@@ -5,6 +5,7 @@ let pokemonImage = document.getElementById('pokeImg');
 
 button.addEventListener('click', function () {
 
+
     fetch('https://pokeapi.co/api/v2/pokemon/' + input.value.toLowerCase() + '')
         .then(link => link.json())
         .then(data => {
@@ -13,7 +14,6 @@ button.addEventListener('click', function () {
             pokemonImage.setAttribute('src', pokeImageSource);
             let id = data.id;
             document.getElementById("pokeId").innerHTML = id;
-
 
             let pokeName = data.name.charAt(0).toUpperCase() + data.name.slice(1);
            // console.log(pokeName);
