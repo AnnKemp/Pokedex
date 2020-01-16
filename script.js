@@ -77,7 +77,7 @@ async function getPrevo() {
         evoImage.setAttribute("src", "")
     } else {
         const preName = evolutionData.evolves_from_species.name;
-        document.getElementById('prevEvolution').innerHTML = "previous evolution: " + preName;
+        document.getElementById('prevEvolution').innerHTML = "Previous Evolution: " + preName;
         preForm(preName);
     }
 
@@ -145,12 +145,14 @@ async function setNext(nextName) {
 
     if (nextName == "") {
         nextImage.setAttribute("src", "");
+        document.getElementById("nextEvolution").innerHTML = "Next Evolution: none";
     }
 
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nextName.toLowerCase()}`);
     let setNextData = await response.json();
     let nextSprite = setNextData.sprites.front_default;
     nextImage.setAttribute("src", nextSprite);
+    document.getElementById("nextEvolution").innerHTML = "Next Evolution: " + nextName;
 
 
 }
