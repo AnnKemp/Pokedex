@@ -4,10 +4,6 @@
     margin:0;
 }
 body{
- /*   background-image: url(img_flwr.gif), url(paper.gif);
-    background-position: right bottom, left top;
-    background-repeat: no-repeat, repeat; */
-
     background-image: url("images/deck.png"), url("images/veelVentjes.jpg");
     background-repeat: no-repeat, repeat-y;
     background-size: auto, cover;
@@ -65,6 +61,14 @@ button i.hover{
      margin-left:-300px;
      top:255px;
  }
+#shinyImg{
+    position:absolute;
+    left:50%;
+    width: 56px;
+    height: 56px;
+    margin-left:-314px;
+    top:132px;
+}
 #pokeId, #pokeName{
     position:absolute;
     left:50%;
@@ -74,7 +78,7 @@ button i.hover{
 }
 #pokeName{
     margin-left:159px;
-    top:247px;
+    top:243px;
 }
 #prevEvolution, #weightPoke, #abilitiesPoke{
     position:absolute;
@@ -88,7 +92,7 @@ button i.hover{
 #abilitiesPoke{
     top:306px;
 }
- #pokeMove1, #pokeMove2, #pokeMove3, #pokeMove4{
+#pokeMove1, #pokeMove2, #pokeMove3, #pokeMove4{
      position:absolute;
      left:50%;
      margin-left:78px;
@@ -107,6 +111,35 @@ button i.hover{
     margin-left:207px;
     top:408px;
 }
+/*------------------------------------------------------ when the backgroundpicture_pokedex is smaller than the screenwidth -----------------------------------------------------*/
+@media screen and (max-width: 674px) {
+ body{
+        background-size: 105% 485px, cover;
+    }
+#pokeName{
+        margin-left:139px;
+    }
+#pokeId {;
+    margin-left: -190px;
+}
+ #pokeMove2, #pokeMove4{
+        margin-left:190px;
+    }
+#pokeMove3, #pokeMove1{
+        margin-left:70px;
+    }
+ #shinyImg{
+        margin-left:-288px;
+    }
+ #pokeImg{
+        margin-left:-172px;
+    }
+#evoImg{
+        margin-left:-275px;
+    }
+}
+
+
 
 /*---------------------------------------------------------------------- small size for phone -----------------------------------------------------------------------*/
 @media screen and (max-width: 600px) {
