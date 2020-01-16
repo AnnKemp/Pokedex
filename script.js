@@ -13,7 +13,7 @@ button.addEventListener('click', function () {
         .then(link => link.json())
         .then(data => {
 
-            //console.log(data);
+            //console.log(data.name);
             // console.log(data.sprites.front_default);
             let pokeImageSource = (data.sprites.front_default);
             pokemonImage.setAttribute('src', pokeImageSource);
@@ -55,6 +55,10 @@ button.addEventListener('click', function () {
                 pokeAbilities = abilitiesNewArray[Math.floor(Math.random()*abilitiesNewArray.length)]; // to make the selection randomly
                 document.getElementById('abilitiesPoke').innerHTML= ('Ability: ' + pokeAbilities ); // to get element id from the html and display new array
             }
+            if (isNaN(input.value) == false) {
+                input.value = data.name;
+            }
+            console.log(input.value);
         })
 
 
@@ -104,11 +108,11 @@ async function getShiny() {
 }
 
 async function getNext(speciesUrl) {
-    console.log(speciesUrl);
+    //console.log(speciesUrl);
     let nextForm;
     let response = await fetch(speciesUrl);
     let nextData = await response.json();
-    console.log(nextData);
+    //console.log(nextData);
 
 
     //checks for BABY pokemon
