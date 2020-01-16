@@ -47,13 +47,13 @@ button.addEventListener('click', function () {
 
 
             // abilities
-            let abilitiesNewArray= [];
+            let abilitiesNewArray = [];
             let pokeAbilities;
 
             for (let i = 0; i < data.abilities.length; i++) { // to get all elements from the array
                 pokeAbilities = abilitiesNewArray.push(data.abilities[i].ability.name); // to add new array + to select abilities specifically from the array
-                pokeAbilities = abilitiesNewArray[Math.floor(Math.random()*abilitiesNewArray.length)]; // to make the selection randomly
-                document.getElementById('abilitiesPoke').innerHTML= ('Ability: ' + pokeAbilities ); // to get element id from the html and display new array
+                pokeAbilities = abilitiesNewArray[Math.floor(Math.random() * abilitiesNewArray.length)]; // to make the selection randomly
+                document.getElementById('abilitiesPoke').innerHTML = ('Ability: ' + pokeAbilities); // to get element id from the html and display new array
             }
             if (isNaN(input.value) == false) {
                 input.value = data.name;
@@ -65,7 +65,7 @@ button.addEventListener('click', function () {
 });
 
 
-// DISCLAIMER I forgot that I could just print the entire chain so I wrote this madness that does a *ton of checks on everything
+// DISCLAIMER I forgot that I could just print the entire chain so I wrote this madness instead
 
 
 async function getPrevo() {
@@ -77,7 +77,7 @@ async function getPrevo() {
         evoImage.setAttribute("src", "")
     } else {
         const preName = evolutionData.evolves_from_species.name;
-        document.getElementById('prevEvolution').innerHTML = "previous evolution: " + preName;
+        document.getElementById('prevEvolution').innerHTML = "Previous Evolution: " + preName;
         preForm(preName);
     }
 
@@ -92,7 +92,7 @@ async function preForm(prevolution) {
     let pokemonSprite = preData.sprites.front_default;
 
     evoImage.setAttribute("src", pokemonSprite);
-   // console.log(pokemonSprite);
+    // console.log(pokemonSprite);
 }
 
 
@@ -109,45 +109,50 @@ async function getShiny() {
 
 async function getNext(speciesUrl) {
     //console.log(speciesUrl);
+
     let nextForm;
     let response = await fetch(speciesUrl);
     let nextData = await response.json();
     //console.log(nextData);
+    console.log(nextData.chain.evolves_to[0]);
 
 
+    if (nextData.chain.evolves_to[0] == undefined) {
+        nextForm = "";
+    }
     //checks for BABY pokemon
-    if (input.value == nextData.chain.species.name) {
+    else if (input.value == nextData.chain.species.name) {
         console.log("sameName");
         nextForm = nextData.chain.evolves_to[0].species.name;
         console.log(nextForm);
     }
 
     //checks for NO NEXT evolution in 2FORM pokemon
-else if (nextData.chain.evolves_to[0].evolves_to[0] == undefined ) {
-    console.log("no next");
-    nextForm ="";
-    }
-else if (input.value == nextData.chain.evolves_to[0].species.name) {
+    else if (nextData.chain.evolves_to[0].evolves_to[0] == undefined) {
+        console.log("no next");
+        nextForm = "";
+    } else if (input.value == nextData.chain.evolves_to[0].species.name) {
         nextForm = nextData.chain.evolves_to[0].evolves_to[0].species.name;
+    } else {
+
+        nextForm = "";
     }
-     else {
 
-         nextForm="";
-     }
-
-     setNext(nextForm)
+    setNext(nextForm)
 }
 
 async function setNext(nextName) {
 
     if (nextName == "") {
         nextImage.setAttribute("src", "");
+        document.getElementById("nextEvolution").innerHTML = "Next Evolution: none";
     }
 
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nextName.toLowerCase()}`);
     let setNextData = await response.json();
     let nextSprite = setNextData.sprites.front_default;
     nextImage.setAttribute("src", nextSprite);
+    document.getElementById("nextEvolution").innerHTML = "Next Evolution: " + nextName;
 
 
 }
