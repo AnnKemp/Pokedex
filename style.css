@@ -69,6 +69,7 @@ button i.hover{
     margin-left:-314px;
     top:132px;
 }
+/*------------------------------------------------------------end poke-images, begin poke-text--------------------------------------------------*/
 #pokeId, #pokeName{
     position:absolute;
     left:50%;
@@ -111,7 +112,7 @@ button i.hover{
     margin-left:207px;
     top:408px;
 }
-/*------------------------------------------------------ when the backgroundpicture_pokedex is smaller than the screenwidth -----------------------------------------------------*/
+/*------------------------------------------------------ when the screenwidth is smaller than the background pokedex -----------------------------------------------------*/
 @media screen and (max-width: 674px) {
  body{
         background-size: 105% 485px, cover;
@@ -138,9 +139,6 @@ button i.hover{
         margin-left:-275px;
     }
 }
-
-
-
 /*---------------------------------------------------------------------- small size for phone -----------------------------------------------------------------------*/
 @media screen and (max-width: 600px) {
 
