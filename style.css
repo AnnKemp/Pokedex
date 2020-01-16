@@ -11,7 +11,7 @@ body{
     background-position-Y:100px, 0px;
     font-family: sans-serif;
     font-size: 14px;
-    font-weight: bold;
+
 }
 /*-------------------------------------------------------------------- the search part ---------------------------------------------------------------------*/
 #ask{
@@ -48,18 +48,19 @@ button i.hover{
  }
 /*-------------------------------------------------------------------- poke info ---------------------------------------------------------------------*/
 #pokeImg{
-    top:253px;
-    margin-left:-190px;
+    top:272px;
+    margin-left:-225px;
+    width:100px;
+    height:100px;
 }
- #pokeImg, #evoImg{
+ #pokeImg, #evoImg, #nextImg{
      position:absolute;
      left:50%;
-     width:130px;
-     height:130px;
+
  }
  #evoImg{
      margin-left:-300px;
-     top:255px;
+     top:283px;
  }
 #shinyImg{
     position:absolute;
@@ -69,6 +70,13 @@ button i.hover{
     margin-left:-314px;
     top:132px;
 }
+#nextImg {
+    margin-left:-153px;
+    top:267px;
+    width:100px;
+    height:100px;
+
+}
 /*------------------------------------------------------------end poke-images, begin poke-text--------------------------------------------------*/
 #pokeId, #pokeName{
     position:absolute;
@@ -76,9 +84,10 @@ button i.hover{
     margin-left:-209px;
     top:520px;
     font-size: 18px;
+    font-weight: bold;
 }
 #pokeName{
-    margin-left:159px;
+    margin-left:140px;
     top:243px;
 }
 #prevEvolution, #weightPoke, #abilitiesPoke{
@@ -143,39 +152,59 @@ button i.hover{
 @media screen and (max-width: 600px) {
 
 body{
+    margin:0;
+    padding:0;
     background-color:#D2381E;
-    padding-left:2%;
+
     background-image: none;
 }
-#forPhone{
+div #forPhone{
     background-color: white;
     border-radius: 5px;
-    width: 80%;
-    height: 70%;
-    margin-bottom: 0px;
+    width:400px;
+    height:400px;
+    margin-bottom:0;
     margin-left:auto;
-    margin-right: auto;
+    margin-right:auto;
 }
     #pokeImg{
-        border:red solid 1px;
-       margin-left:auto;
-       margin-right:auto;
+        top:160px;
+        margin-left:-108px;
         width:200px;
         height:200px;
     }
-    #pokeMoves{
-       margin-top: 10px;
-        /* font-size: 16px;*/
+    #shinyImg{
+        top:13px;
+        margin-left:-240px;
     }
-    #pokeId{
-        position:absolute;
-        left:50%;
-        margin-left:-10px;
-        top:504px;
-        font-size: 18px;
+    #evoImg {
+        top:220px;
+        margin-left: -230px;
     }
     #pokeName{
-        margin-top:20px;
-        /* font-size: 16px;*/
+        top:400px;
+        left:50%;
+        margin-left:-30px;
     }
+    #prevEvolution, #weightPoke, #abilitiesPoke{
+        position:relative;
+        left:0;
+        top:0;
+        margin-left:10px;
+      margin-top:20px;
+    }
+
+    #pokeMove2, #pokeMove4,#pokeMove3, #pokeMove1{
+        color:black;
+        left:20%;
+        margin-top:60px;
+        font-size:1em ;
+    }
+    #pokeId{
+
+        margin-left:-10px;
+      margin-bottom:10%;
+        font-size: 18px;
+    }
+
 }
