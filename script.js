@@ -75,6 +75,11 @@ async function preForm(namepokemon) {
     console.log(pokemonSprite);
 }
 
+
+
+
+
+
 // //fetch next evo
 // fetch(evolutionUrl)
 //     .then(link => link.json())
