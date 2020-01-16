@@ -5,7 +5,7 @@ let evoImage = document.getElementById('evoImg');
 
 button.addEventListener('click', function () {
 
-getEvolution();
+getPrevo();
     fetch('https://pokeapi.co/api/v2/pokemon/' + input.value.toLowerCase() + '')
         .then(link => link.json())
         .then(data => {
@@ -50,20 +50,27 @@ getEvolution();
 
 
 
-async function getEvolution() {
+async function getPrevo() {
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${input.value}`);
     let evolutionData = await response.json();
-    const previousPokemonName = evolutionData.evolves_from_species.name;
-    document.getElementById('prevEvolution').innerHTML = "previous evolution: "+previousPokemonName;
 
-    getPreviousEvolution(previousPokemonName);
+    if (evolutionData.evolves_from_species == null) {
+        document.getElementById('prevEvolution').innerHTML = "";
+        evoImage.setAttribute("src", "")
+    }
+    else {
+        const preName = evolutionData.evolves_from_species.name;
+        document.getElementById('prevEvolution').innerHTML = "previous evolution: " + preName;
+        preForm(preName);
+    }
 }
 
-async function getPreviousEvolution(namepokemon) {
+async function preForm(namepokemon) {
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${namepokemon}`);
-    let pokemonEvolutionDataPrevious = await response.json();
-    console.log(pokemonEvolutionDataPrevious.sprites);
-    let pokemonSprite = pokemonEvolutionDataPrevious.sprites.front_default;
+    let preData = await response.json();
+    console.log(preData.sprites);
+    let pokemonSprite = preData.sprites.front_default;
+
     evoImage.setAttribute("src", pokemonSprite);
     console.log(pokemonSprite);
 }
