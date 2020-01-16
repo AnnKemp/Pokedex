@@ -55,6 +55,24 @@ button.addEventListener('click', function () {
                 pokeAbilities = abilitiesNewArray[Math.floor(Math.random() * abilitiesNewArray.length)]; // to make the selection randomly
                 document.getElementById('abilitiesPoke').innerHTML = ('Ability: ' + pokeAbilities); // to get element id from the html and display new array
             }
+
+            // types
+
+            var pokeTypes1 = data.types[0].type.name;
+
+            if (data.types.length ===1) {
+                document.getElementById("pokeTypes1").innerHTML= pokeTypes1;
+                document.getElementById("pokeTypes2").innerHTML= " ";
+            } else {
+                var pokeTypes2 = data.types[1].type.name;
+                document.getElementById("pokeTypes1").innerHTML= pokeTypes1;
+                document.getElementById("pokeTypes2").innerHTML= pokeTypes2;
+            }
+
+
+
+
+            //checking for ID
             if (isNaN(input.value) == false) {
                 input.value = data.name;
             }
