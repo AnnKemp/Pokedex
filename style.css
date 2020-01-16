@@ -8,10 +8,10 @@ body{
     background-position: right bottom, left top;
     background-repeat: no-repeat, repeat; */
 
-    background-image: url("images/deck.jpg");
-    background-repeat: no-repeat;
+    background-image: url("images/deck.png"), url("images/background.jpg");
+    background-repeat: no-repeat, no-repeat;
     background-position-x:center;
-    background-position-Y:100px;
+    background-position-Y:100px, 0px;
     font-family: sans-serif;
     font-size: 14px;
     font-weight: bold;
@@ -50,18 +50,18 @@ button i.hover{
  }
 /*-------------------------------------------------------------------- poke info ---------------------------------------------------------------------*/
 #pokeImg{
-    top:245px;
+    top:253px;
+    margin-left:-190px;
 }
  #pokeImg, #evoImg{
      position:absolute;
      left:50%;
-     margin-left:-220px;
-     width:150px;
-     height:150px;
+     width:130px;
+     height:130px;
  }
  #evoImg{
      margin-left:-300px;
-     top:257px;
+     top:255px;
  }
 #pokeId, #pokeName{
     position:absolute;
