@@ -151,10 +151,10 @@ button i.hover{
         background-size: 105% 485px, cover;
     }
 #pokeName{
-        margin-left:139px;
+        margin-left:130px;
     }
 #pokeId {;
-    margin-left: -190px;
+    margin-left: -197px;
 }
  #pokeMove2, #pokeMove4{
         margin-left:190px;
@@ -166,10 +166,13 @@ button i.hover{
         margin-left:-288px;
     }
  #pokeImg{
-        margin-left:-172px;
+        margin-left:-220px;
     }
 #evoImg{
-        margin-left:-275px;
+        margin-left:-290px;
+    }
+#nextImg {
+        margin-left:-158px;
     }
 }
 /*---------------------------------------------------------------------- small size for phone -----------------------------------------------------------------------*/
@@ -227,7 +230,6 @@ div#forPhone{
         font-size: 2em;
     }
     #prevEvolution, #weightPoke, #abilitiesPoke, #nextEvolution{
-
         margin-left:-25%;
     }
     #weightPoke{
@@ -260,7 +262,6 @@ div#forPhone{
         top: 91%;
     }
     #pokeTypes1, #pokeTypes2{
-
         color:#ff0000;
         font-weight: bold;
         font-size: 1.2em;
