@@ -81,13 +81,15 @@ button i.hover{
 #pokeId, #pokeName{
     position:absolute;
     left:50%;
-    margin-left:-209px;
-    top:520px;
     font-size: 18px;
     font-weight: bold;
 }
+#pokeId {
+    margin-left:-205px;
+    top:520px;
+}
 #pokeName{
-    margin-left:140px;
+    margin-left:161px;
     top:243px;
 }
 #prevEvolution, #weightPoke, #abilitiesPoke, #nextEvolution{
@@ -129,10 +131,10 @@ button i.hover{
 #pokeTypes1, #pokeTypes2{
     position:absolute;
     left:50%;
-    color:white;
+    color:#ff0000;
     font-weight: bold;
     font-size: 1.2em;
-    text-shadow: 1px 1px 2px #444;
+  text-shadow: 1px 1px 2px #8F008B;
 }
 #pokeTypes1{
     margin-left:105px;
@@ -185,9 +187,9 @@ div#forPhone{
     border-radius: 5px;
 
     width:90%;
-    height:250px;
+    height:300px;
 
-    margin-top:50%;
+    margin-top:240px;
     margin-left:auto;
     margin-right:auto;
     z-index: 5;
@@ -199,11 +201,11 @@ div#forPhone{
         z-index: 50;
     }
     #nextImg {
-        top:180px;
+        top:156px;
         margin-left:-2px;
     }
     #pokeImg{
-        top:180px;
+        top:155px;
         margin-left:-108px;
     }
     /* afblijven, die is 'OK' */
@@ -213,46 +215,64 @@ div#forPhone{
 
     }
     #evoImg {
-        top:210px;
+        top:185px;
         margin-left: -260px;
         width:205px;
         height:205px;
     }
     #pokeName{
-        top:400px;
+        top:40px;
         left:50%;
         margin-left:-70px;
         font-size: 2em;
     }
-    #prevEvolution, #weightPoke, #abilitiesPoke{
+    #prevEvolution, #weightPoke, #abilitiesPoke, #nextEvolution{
 
         margin-left:-25%;
     }
     #weightPoke{
-        top:450px;
+        top:77px;
         margin-left:-25%;
     }
     #abilitiesPoke{
-        top:470px;
+        top:97px;
         margin-left:-25%;
     }
     #prevEvolution{
-        top:490px;
+        top:117px;
+    }
+    #nextEvolution{
+        top:137px;
     }
 
     #pokeMove2, #pokeMove4,#pokeMove3, #pokeMove1{
         color:black;
-        left:15%;
-       margin-top:160px;
+        left:10%;
+       margin-top:-197px;
 
         font-size:1em ;
         font-weight: bold;
     }
     #pokeId{
-        margin-left:-10px;
+        margin-left:-22px;
       margin-bottom:5%;
         font-size: 18px;
-        top: 95%;
+        top: 91%;
+    }
+    #pokeTypes1, #pokeTypes2{
+
+        color:#ff0000;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-shadow: 1px 1px 2px #ff0000;
+    }
+    #pokeTypes1{
+        margin-left:-80px;
+        top:240px;
+    }
+    #pokeTypes2{
+        margin-left:10px;
+        top:240px;
     }
 
 }
