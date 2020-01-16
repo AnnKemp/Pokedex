@@ -38,6 +38,9 @@ getEvolution();
                 document.getElementById('pokeMove'+(i+1)+'').innerHTML = randomFourMoves;
             }
 
+            let pokeWeight = data.weight;
+            document.getElementById('weightPoke').innerHTML= ('Weight: ' + pokeWeight);
+
 
                 })
 
@@ -62,6 +65,7 @@ async function getPreviousEvolution(namepokemon) {
     console.log(pokemonEvolutionDataPrevious.sprites);
     let pokemonSprite = pokemonEvolutionDataPrevious.sprites.front_default;
     evoImage.setAttribute("src", pokemonSprite);
+    console.log(pokemonSprite);
 }
 
 // //fetch next evo
