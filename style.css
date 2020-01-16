@@ -90,17 +90,22 @@ button i.hover{
     margin-left:140px;
     top:243px;
 }
-#prevEvolution, #weightPoke, #abilitiesPoke{
+#prevEvolution, #weightPoke, #abilitiesPoke, #nextEvolution{
     position:absolute;
     left:50%;
     margin-left:70px;
+}
+#prevEvolution{
     top:265px;
 }
+#nextEvolution{
+    top:283px;
+}
 #weightPoke{
-    top:285px;
+    top:302px;
 }
 #abilitiesPoke{
-    top:306px;
+    top:321px;
 }
 #pokeMove1, #pokeMove2, #pokeMove3, #pokeMove4{
      position:absolute;
@@ -121,6 +126,23 @@ button i.hover{
     margin-left:207px;
     top:408px;
 }
+#pokeTypes1, #pokeTypes2{
+    position:absolute;
+    left:50%;
+    color:white;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px #444;
+}
+#pokeTypes1{
+    margin-left:105px;
+    top:530px;
+}
+#pokeTypes2{
+    margin-left:210px;
+    top:530px;
+}
+
 /*------------------------------------------------------ when the screenwidth is smaller than the background pokedex -----------------------------------------------------*/
 @media screen and (max-width: 674px) {
  body{
