@@ -20,9 +20,13 @@ button.addEventListener('click', function () {
         document.getElementById('weightPoke').innerHTML= ('Weight: ' + pokeWeight);
 
         // abilities
-            for (let i = 0; i < data.abilities.length; i++) {
-                let abilitiesPokeVar = data.abilities[i].ability.name;
-                document.getElementById('abilitiesPoke').innerHTML = abilitiesPokeVar;
+        let abilitiesNewArray= [];
+        let pokeAbilities;
+
+            for (let i = 0; i < data.abilities.length; i++) { // to get all elements from the array
+                pokeAbilities = abilitiesNewArray.push(data.abilities[i].ability.name); // to add new array + to select abilities specifically from the array
+                pokeAbilities = abilitiesNewArray[Math.floor(Math.random()*abilitiesNewArray.length)]; // to make the selection randomly
+                document.getElementById('abilitiesPoke').innerHTML= ('Abilities: ' + pokeAbilities ); // to get element id from the html and display new array
             }
 
         // poke moves
@@ -54,4 +58,7 @@ button.addEventListener('click', function () {
 
 let fourPokeVar = pokeMovesNewArray.push(data.moves[i].move.name);
 fourPokeMoves.push[Math.floor(Math.random()*fourPokeVar)];
- */
+
+
+
+*/
