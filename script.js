@@ -6,22 +6,37 @@ let shinyImage = document.getElementById('shinyImg');
 let nextImage = document.getElementById('nextImg');
 
 button.addEventListener('click', function () {
+    doTheThing()
+});
+input.addEventListener('keyup', function (e) {
 
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        doTheThing();
+    }
+});
+
+
+function doTheThing() {
+    //loads function for previous evo
     getPrevo();
+    //loads function for next evo
     getShiny();
+
+
+    //Fetch for the pokemons BASE form
     fetch('https://pokeapi.co/api/v2/pokemon/' + input.value.toLowerCase() + '')
         .then(link => link.json())
         .then(data => {
-
-            //console.log(data.name);
-            // console.log(data.sprites.front_default);
             let pokeImageSource = (data.sprites.front_default);
             pokemonImage.setAttribute('src', pokeImageSource);
+
+            //sets ID number
             let id = data.id;
             document.getElementById("pokeId").innerHTML = id;
 
+            //Name
             let pokeName = data.name.charAt(0).toUpperCase() + data.name.slice(1);
-            // console.log(pokeName);
             document.getElementById('pokeName').innerHTML = pokeName;
             let pokemonId = document.getElementById("pokeId").innerText;
 
@@ -60,16 +75,14 @@ button.addEventListener('click', function () {
 
             var pokeTypes1 = data.types[0].type.name;
 
-            if (data.types.length ===1) {
-                document.getElementById("pokeTypes1").innerHTML= pokeTypes1;
-                document.getElementById("pokeTypes2").innerHTML= " ";
+            if (data.types.length === 1) {
+                document.getElementById("pokeTypes1").innerHTML = pokeTypes1;
+                document.getElementById("pokeTypes2").innerHTML = " ";
             } else {
                 var pokeTypes2 = data.types[1].type.name;
-                document.getElementById("pokeTypes1").innerHTML= pokeTypes1;
-                document.getElementById("pokeTypes2").innerHTML= pokeTypes2;
+                document.getElementById("pokeTypes1").innerHTML = pokeTypes1;
+                document.getElementById("pokeTypes2").innerHTML = pokeTypes2;
             }
-
-
 
 
             //checking for ID
@@ -78,18 +91,18 @@ button.addEventListener('click', function () {
             }
             console.log(input.value);
         })
-
-
-});
+}
 
 
 // DISCLAIMER I forgot that I could just print the entire chain so I wrote this madness instead
 
 
 async function getPrevo() {
-    let response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${input.value.toLowerCase()}`);
+    let response = await fetch("https://pokeapi.co/api/v2/pokemon-species/" + input.value.toLowerCase() + "");
+    // let response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${input.value.toLowerCase()}`);
     let evolutionData = await response.json();
 
+    console.log(evolutionData);
     if (evolutionData.evolves_from_species == null) {
         document.getElementById('prevEvolution').innerHTML = "";
         evoImage.setAttribute("src", "")
@@ -106,7 +119,7 @@ async function getPrevo() {
 async function preForm(prevolution) {
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${prevolution}`);
     let preData = await response.json();
-    //console.log(preData.sprites);
+    console.log(preData);
     let pokemonSprite = preData.sprites.front_default;
 
     evoImage.setAttribute("src", pokemonSprite);
