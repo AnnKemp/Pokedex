@@ -155,56 +155,82 @@ body{
     margin:0;
     padding:0;
     background-color:#D2381E;
-
     background-image: none;
 }
-div #forPhone{
+div#forPhone{
+    position: relative;
     background-color: white;
     border-radius: 5px;
-    width:400px;
-    height:400px;
-    margin-bottom:0;
+
+    width:90%;
+    height:250px;
+
+    margin-top:50%;
     margin-left:auto;
     margin-right:auto;
+    z-index: 5;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
 }
-    #pokeImg{
-        top:160px;
-        margin-left:-108px;
-        width:200px;
-        height:200px;
+    #pokeImg, #evoImg, #nextImg{
+        width:220px;
+        height:220px;
+        z-index: 50;
     }
+    #nextImg {
+        top:180px;
+        margin-left:-2px;
+    }
+    #pokeImg{
+        top:180px;
+        margin-left:-108px;
+    }
+    /* afblijven, die is 'OK' */
     #shinyImg{
         top:13px;
         margin-left:-240px;
+
     }
     #evoImg {
-        top:220px;
-        margin-left: -230px;
+        top:210px;
+        margin-left: -260px;
+        width:205px;
+        height:205px;
     }
     #pokeName{
         top:400px;
         left:50%;
-        margin-left:-30px;
+        margin-left:-70px;
+        font-size: 2em;
     }
     #prevEvolution, #weightPoke, #abilitiesPoke{
-        position:relative;
-        left:0;
-        top:0;
-        margin-left:10px;
-      margin-top:20px;
+
+        margin-left:-25%;
+    }
+    #weightPoke{
+        top:450px;
+        margin-left:-25%;
+    }
+    #abilitiesPoke{
+        top:470px;
+        margin-left:-25%;
+    }
+    #prevEvolution{
+        top:490px;
     }
 
     #pokeMove2, #pokeMove4,#pokeMove3, #pokeMove1{
         color:black;
-        left:20%;
-        margin-top:60px;
+        left:15%;
+       margin-top:160px;
+
         font-size:1em ;
+        font-weight: bold;
     }
     #pokeId{
-
         margin-left:-10px;
-      margin-bottom:10%;
+      margin-bottom:5%;
         font-size: 18px;
+        top: 95%;
     }
 
 }
